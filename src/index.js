@@ -1,5 +1,4 @@
-import { appendToDom } from "./append-to-dom";
+import { addTaskToDom } from "./add-task-to-dom";
 import { createTask } from "./create-task";
 
-appendToDom()
-createTask()
+addTaskToDom()
