@@ -23,8 +23,6 @@ const addTaskToDom = () => {
     form.appendChild(dueDateInput)
     form.appendChild(priorityInput)
     contentDiv.appendChild(form)  
-
-
 }
 
 export {addTaskToDom}
