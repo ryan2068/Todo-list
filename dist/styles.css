@@ -1,3 +1,12 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(217deg, rgba(209, 148, 148, 0.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(162, 229, 162, 0.8), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+
 #content {
     display: flex;
     height: 100vh;
@@ -5,4 +14,3 @@
     justify-content: center;
     align-items: center;
 }
-

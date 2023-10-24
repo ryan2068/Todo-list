@@ -1,4 +1,5 @@
-import { addTaskToDom } from "./add-task-to-dom";
+import { addATask, addTaskInputsToDom } from "./DOMEvents";
 import { createTask } from "./create-task";
 
-addTaskToDom()
+addTaskInputsToDom()
+addATask
