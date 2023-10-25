@@ -1,6 +1,4 @@
 
-
-
 const createTask = function(title, description, dueDate, priority) {
     this.title = title
     this.description = description
@@ -8,6 +6,7 @@ const createTask = function(title, description, dueDate, priority) {
     this.priority = priority
     return { title, description, dueDate, priority }
 }
+
 
 
 

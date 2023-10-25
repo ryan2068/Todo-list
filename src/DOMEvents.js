@@ -1,3 +1,5 @@
+import { createTask } from "./create-task"
+
 const contentDiv = document.querySelector("#content")
 const form = document.createElement("form")
 
@@ -5,19 +7,19 @@ const addTaskInputsToDom = () => {
 
     //Title input
     const titleInput = document.createElement("input")
-    titleInput.setAttribute("name", "title")
+    titleInput.setAttribute("id", "title")
     titleInput.setAttribute("placeholder", "Title of Task...")
     //Description input
     const descriptionInput = document.createElement("input")
-    descriptionInput.setAttribute("name", "description")
+    descriptionInput.setAttribute("id", "description")
     descriptionInput.setAttribute("placeholder", "Description of Task...")
     //DueDate input
     const dueDateInput = document.createElement("input")
-    dueDateInput.setAttribute("name", "dueDate")
+    dueDateInput.setAttribute("id", "dueDate")
     dueDateInput.setAttribute("placeholder", "DueDate")
     //Priority input
     const priorityInput = document.createElement("input")
-    priorityInput.setAttribute("name", "priority")
+    priorityInput.setAttribute("id", "priority")
     priorityInput.setAttribute("placeholder", "Priority of Task...")
     //Submit button 
     const submitBtn = document.createElement("button")
@@ -35,11 +37,33 @@ const addTaskInputsToDom = () => {
 }
 
 const addATask = () => {
-    form.addEventListner('click', (e) => {
+    form.addEventListener('click', (e) => {
         e.preventDefault()
-        console.log("form works")
+        const title = document.querySelector("#title").value
+        const description = document.querySelector("#description").value
+        const dueDate = document.querySelector("#dueDate").value
+        const priority = document.querySelector("#priority").value
+        const task = new createTask (title, description, dueDate, priority)
+        console.log(task)
+
+        const generateTable = function() {
+            const table = document.createElement("table")
+            let thead = table.createTHead()
+            let row = thead.insertRow()
+            for (let key of data) {
+                let th = document.createElement("th")
+                let text = document.createTextNode(key)
+                th.appendChild(text)
+                row.appendChild(th)
+            }
+        }
+        let data = Object.keys(task)
+        generateTable(domTable, data)
+        contentDiv.appendChild(domTable)
     })
 }
+
+
 
 
 
