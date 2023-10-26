@@ -3,6 +3,7 @@ import { createTask } from "./create-task"
 const contentDiv = document.querySelector("#content")
 const form = document.createElement("form")
 
+
 const addTaskInputsToDom = () => {
 
     //Title input
@@ -23,6 +24,7 @@ const addTaskInputsToDom = () => {
     priorityInput.setAttribute("placeholder", "Priority of Task...")
     //Submit button 
     const submitBtn = document.createElement("button")
+    submitBtn.classList.add("submit")
     submitBtn.setAttribute("type", "submit")
     submitBtn.textContent = "Submit"
 
@@ -37,7 +39,8 @@ const addTaskInputsToDom = () => {
 }
 
 const addATask = (title, description, dueDate, priority) => {
-    form.addEventListener('click', (e) => {
+    const submitBtn = document.querySelector(".submit")
+    submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
         const title = document.querySelector("#title").value
         const description = document.querySelector("#description").value
@@ -48,9 +51,30 @@ const addATask = (title, description, dueDate, priority) => {
 
         const ul = document.createElement("ul");
         const li = document.createElement("li");
+        
+        //creating list details on submit
+        const listDetails = document.createElement("div")
+        const taskTitle = document.createElement("div")
+        const taskDescription = document.createElement("div")
+        const taskDueDate = document.createElement("div")
+        taskTitle.textContent = task.title
+        taskDescription.textContent = task.description
+        taskDescription.textContent = task.dueDate
+
+
+        
+        li.appendChild(listDetails)
+        listDetails.appendChild(taskTitle)
+        listDetails.appendChild(taskDescription)
+        li.appendChild(taskDueDate)
+
+
+        
+
+
+
         ul.appendChild(li)
-
-
+        contentDiv.appendChild(ul)
     })
     
 }
