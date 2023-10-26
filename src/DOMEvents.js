@@ -57,9 +57,15 @@ const addATask = (title, description, dueDate, priority) => {
         const taskTitle = document.createElement("div")
         const taskDescription = document.createElement("div")
         const taskDueDate = document.createElement("div")
+        const taskPriority = document.createElement("div")
         taskTitle.textContent = task.title
         taskDescription.textContent = task.description
-        taskDescription.textContent = task.dueDate
+        taskDueDate.textContent = task.dueDate
+        taskPriority.textContent = task.priority
+
+        taskDueDate.classList.add("dueDate")
+        taskPriority.classList.add("priority")
+
 
 
         
@@ -67,6 +73,7 @@ const addATask = (title, description, dueDate, priority) => {
         listDetails.appendChild(taskTitle)
         listDetails.appendChild(taskDescription)
         li.appendChild(taskDueDate)
+        li.appendChild(taskPriority)
 
 
         

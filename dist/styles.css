@@ -6,11 +6,30 @@ html, body {
             linear-gradient(336deg, rgb(0, 0, 255), rgba(0,0,255,0) 70.71%);
 }
 
-
 #content {
     display: flex;
     height: 100vh;
     width: 100vw;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
+li {
+    display: flex;
+    width: 41.8vw;
+    border: solid 2px lightblue;
+    padding: 1rem;
+}
+
+.dueDate {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.priority {
+    display: flex;
+    width: 10%;
+    justify-content: flex-end;
+}
+
