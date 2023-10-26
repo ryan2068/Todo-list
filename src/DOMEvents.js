@@ -36,7 +36,7 @@ const addTaskInputsToDom = () => {
     contentDiv.appendChild(form)  
 }
 
-const addATask = () => {
+const addATask = (title, description, dueDate, priority) => {
     form.addEventListener('click', (e) => {
         e.preventDefault()
         const title = document.querySelector("#title").value
@@ -46,23 +46,14 @@ const addATask = () => {
         const task = new createTask (title, description, dueDate, priority)
         console.log(task)
 
-        const generateTable = function() {
-            const table = document.createElement("table")
-            let thead = table.createTHead()
-            let row = thead.insertRow()
-            for (let key of data) {
-                let th = document.createElement("th")
-                let text = document.createTextNode(key)
-                th.appendChild(text)
-                row.appendChild(th)
-            }
-        }
-        let data = Object.keys(task)
-        generateTable(domTable, data)
-        contentDiv.appendChild(domTable)
-    })
-}
+        const ul = document.createElement("ul");
+        const li = document.createElement("li");
+        ul.appendChild(li)
 
+
+    })
+    
+}
 
 
 
