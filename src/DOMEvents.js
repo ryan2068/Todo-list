@@ -2,6 +2,8 @@ import { createTask } from "./create-task"
 
 const contentDiv = document.querySelector("#content")
 const form = document.createElement("form")
+const formListContainer = document.createElement("div")
+formListContainer.classList.add("form-list-container")
 
 
 const addTaskInputsToDom = () => {
@@ -31,7 +33,8 @@ const addTaskInputsToDom = () => {
     form.appendChild(descriptionInput)
     form.appendChild(dueDateInput)
     form.appendChild(submitBtn)
-    contentDiv.appendChild(form)  
+    formListContainer.appendChild(form)
+    contentDiv.appendChild(formListContainer)  
 }
 
 const addATask = (title, description, dueDate, priority) => {
@@ -83,7 +86,8 @@ const addATask = (title, description, dueDate, priority) => {
 
 
         ul.appendChild(li)
-        contentDiv.appendChild(ul)
+        formListContainer.appendChild(ul)
+        contentDiv.appendChild(formListContainer)
     })
     
 }
