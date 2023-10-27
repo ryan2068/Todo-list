@@ -17,7 +17,7 @@ const addTaskInputsToDom = () => {
     //DueDate input
     const dueDateInput = document.createElement("input")
     dueDateInput.setAttribute("id", "dueDate")
-    dueDateInput.setAttribute("placeholder", "DueDate")
+    dueDateInput.setAttribute("placeholder", "DueDate...")
 
     //Submit button 
     const submitBtn = document.createElement("button")
@@ -55,8 +55,11 @@ const addATask = (title, description, dueDate, priority) => {
         const taskDueDate = document.createElement("div")
         const DueDatePriorityContainer = document.createElement("div")
         const taskPriority = document.createElement("input")
+        const importantSpan = document.createElement("span")
+        importantSpan.innerHTML = "<em>important?</em>"
         taskPriority.setAttribute("id", "priority")
         taskPriority.setAttribute("type", "checkbox")
+        taskPriority.classList.add("important-checkbox")
         //setting list inputs as a ToDo list
         taskTitle.textContent = task.title
         taskDescription.textContent = task.description
@@ -69,6 +72,7 @@ const addATask = (title, description, dueDate, priority) => {
         listLeft.appendChild(taskTitle)
         listLeft.appendChild(taskDescription)
         DueDatePriorityContainer.appendChild(taskDueDate)
+        DueDatePriorityContainer.appendChild(importantSpan)
         DueDatePriorityContainer.appendChild(taskPriority)
         li.appendChild(listLeft)
         li.appendChild(DueDatePriorityContainer)
