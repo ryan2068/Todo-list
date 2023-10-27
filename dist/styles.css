@@ -3,8 +3,8 @@ html, body {
     margin: 0px;
     padding: 0px;
     height: 3em;
-    background: linear-gradient(rgba(253, 105, 6, 0.8), rgb(228, 121, 0) 70.71%),
-            linear-gradient(rgb(247, 181, 41), rgba(250, 186, 48, 0.986) 70.71%)
+    background: linear-gradient(rgba(253, 105, 6, 0.8), rgb(255, 136, 0) 99.71%),
+            linear-gradient(rgb(247, 181, 41), rgba(250, 186, 48, 0.986) 99.71%)
 }
 
 #content {
@@ -27,7 +27,7 @@ html, body {
 li {
     display: flex;
     width: 41.8vw;
-    border: solid 4px rgba(255, 196, 0, 0.74);
+    border: solid 4px rgba(255, 217, 0, 0.692);
     padding: .5rem;
     border-radius: 1.75rem;
 }
