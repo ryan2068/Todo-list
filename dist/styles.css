@@ -20,16 +20,18 @@ li {
     width: 41.8vw;
     border: solid 2px lightblue;
     padding: 1rem;
+
 }
 
-.dueDate {
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
+
+.list-left {
+    width: 87%;
+
 }
-.priority {
+
+.DueDatePriorityContainer {
     display: flex;
-    width: 10%;
-    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
 }
 

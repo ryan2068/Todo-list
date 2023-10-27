@@ -18,10 +18,7 @@ const addTaskInputsToDom = () => {
     const dueDateInput = document.createElement("input")
     dueDateInput.setAttribute("id", "dueDate")
     dueDateInput.setAttribute("placeholder", "DueDate")
-    //Priority input
-    const priorityInput = document.createElement("input")
-    priorityInput.setAttribute("id", "priority")
-    priorityInput.setAttribute("placeholder", "Priority of Task...")
+
     //Submit button 
     const submitBtn = document.createElement("button")
     submitBtn.classList.add("submit")
@@ -33,7 +30,6 @@ const addTaskInputsToDom = () => {
     form.appendChild(titleInput)
     form.appendChild(descriptionInput)
     form.appendChild(dueDateInput)
-    form.appendChild(priorityInput)
     form.appendChild(submitBtn)
     contentDiv.appendChild(form)  
 }
@@ -45,7 +41,7 @@ const addATask = (title, description, dueDate, priority) => {
         const title = document.querySelector("#title").value
         const description = document.querySelector("#description").value
         const dueDate = document.querySelector("#dueDate").value
-        const priority = document.querySelector("#priority").value
+        const priority = document.querySelector("#priority")
         const task = new createTask (title, description, dueDate, priority)
         console.log(task)
 
@@ -53,27 +49,29 @@ const addATask = (title, description, dueDate, priority) => {
         const li = document.createElement("li");
         
         //creating list details on submit
-        const listDetails = document.createElement("div")
+        const listLeft = document.createElement("div")
         const taskTitle = document.createElement("div")
         const taskDescription = document.createElement("div")
         const taskDueDate = document.createElement("div")
-        const taskPriority = document.createElement("div")
+        const DueDatePriorityContainer = document.createElement("div")
+        const taskPriority = document.createElement("input")
+        taskPriority.setAttribute("id", "priority")
+        taskPriority.setAttribute("type", "checkbox")
+        //setting list inputs as a ToDo list
         taskTitle.textContent = task.title
         taskDescription.textContent = task.description
         taskDueDate.textContent = task.dueDate
         taskPriority.textContent = task.priority
 
-        taskDueDate.classList.add("dueDate")
-        taskPriority.classList.add("priority")
+        listLeft.classList.add("list-left")
+        DueDatePriorityContainer.classList.add("DueDatePriorityContainer")
 
-
-
-        
-        li.appendChild(listDetails)
-        listDetails.appendChild(taskTitle)
-        listDetails.appendChild(taskDescription)
-        li.appendChild(taskDueDate)
-        li.appendChild(taskPriority)
+        listLeft.appendChild(taskTitle)
+        listLeft.appendChild(taskDescription)
+        DueDatePriorityContainer.appendChild(taskDueDate)
+        DueDatePriorityContainer.appendChild(taskPriority)
+        li.appendChild(listLeft)
+        li.appendChild(DueDatePriorityContainer)
 
 
         
