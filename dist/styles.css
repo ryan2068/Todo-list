@@ -12,14 +12,12 @@ html, body {
     height: 100vh;
     width: 100vw;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;   
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;  
 }
 
 .form-list-container {
-    display: grid;
     grid-column: 2;
     grid-row: 2 / 6;
-    justify-content: center;
 }
 
 form {
@@ -30,16 +28,15 @@ form {
 
 li {
     display: flex;
-    width: 30.8vw;
+    width: 27.8vw;
     border: solid 2px rgba(255, 217, 0, 0.692);
     padding: .5rem;
     border-radius: 1.75rem;
-    height: 2rem;
+    height: 1.7rem;
 }
 
 ul {
-    display: flex;
-    justify-content: center;
+
 }
 
 .list-left {
@@ -57,5 +54,5 @@ ul {
 .projects-container {
     grid-column: 1;
     grid-row: 2;
-    border: 4px solid lightblue
+    border: 1px solid lightblue
 }
