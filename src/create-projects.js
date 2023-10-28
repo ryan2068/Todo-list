@@ -13,6 +13,12 @@ const addProject = function () {
     const projectHome = document.createElement("button") 
     //dom manipulation
     projectHome.textContent = "Home"
+    projectHome.classList.add("home-btn")
+    projectInput.classList.add("input-submit-btn")
+    projectSubmitBtn.classList.add("input-submit-btn", "submit-btn")
+    projectSubmitBtn.textContent = ("Submit")
+    projectInput.setAttribute("placeholder", "Add New Project?...")
+    
     
 
 
@@ -20,11 +26,12 @@ const addProject = function () {
 
     projectSubmitBtn.setAttribute("type", "submit")
 
-    projectsContainer.appendChild(projectForm)
-    projectsContainer.appendChild(projectInput)
-    projectsContainer.appendChild(projectSubmitBtn)
     projectsContainer.appendChild(projectHome)
+    projectForm.appendChild(projectInput)
+    projectForm.appendChild(projectSubmitBtn)
+    projectsContainer.appendChild(projectForm)
     contentDiv.appendChild(projectsContainer)
+
 
 
 
