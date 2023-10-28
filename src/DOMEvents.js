@@ -1,5 +1,4 @@
 import { createTask } from "./create-task"
-import { addProject } from "./create-projects"
 
 const contentDiv = document.querySelector("#content")
 const form = document.createElement("form")

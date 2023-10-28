@@ -49,4 +49,6 @@ ul {
     gap: .8rem;
 }
 
-
+.projects-container {
+    display: flex;
+}
