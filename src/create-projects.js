@@ -1,6 +1,6 @@
 const contentDiv = document.querySelector("#content")
 const projectsContainer = document.createElement("div") 
-projectsContainer.classList.add("projets-container")
+projectsContainer.classList.add("projects-container")
 
 
 
