@@ -8,9 +8,13 @@ const createTask = function(title, description, dueDate, priority) {
 }
 
 
+const projectsFactory = function (name) {
+    this.name = name
+    return { name }
+}
 
 
 
-export {createTask}
+export {createTask, projectsFactory}
 
 

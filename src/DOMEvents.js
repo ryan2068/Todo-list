@@ -50,6 +50,7 @@ const addATask = (title, description, dueDate, priority) => {
 
         const ul = document.createElement("ul");
         const li = document.createElement("li");
+        li.classList.add("todo-list")
         
         //creating list details on submit
         const listLeft = document.createElement("div")

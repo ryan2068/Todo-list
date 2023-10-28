@@ -14,8 +14,8 @@ html, body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;  
     gap: 2rem;
-    margin: 2.7rem;
-
+    padding: 2.7rem;
+    box-sizing: border-box;
 }
 
 .form-list-container {
@@ -28,7 +28,7 @@ form {
     height: 1.6rem;
 }
 
-li {
+.todo-list {
     display: flex;
     width: 27.8vw;
     border: solid 2px rgba(255, 217, 0, 0.692);
@@ -37,9 +37,7 @@ li {
     height: 1.7rem;
 }
 
-ul {
 
-}
 
 .list-left {
     width: 87%;
@@ -56,16 +54,18 @@ ul {
 .projects-container {
     display: flex;
     grid-column: 1;
-    grid-row: 2 / 5;
-    border: 1px solid rgba(255, 71, 15, 0.795);
+    grid-row: 2 / 6;
     flex-direction: column;
-    gap: 4rem;
-    padding-left: 2rem;    
+    gap: 1rem;
+    padding-left: 2rem;  
+    background-color: rgba(255, 174, 0, 0.281); 
+    border-radius: 2rem;
+    overflow: hidden;
 }
 
 .home-btn {
-    height: 5rem;
-    width: 19rem;
+    height: 4rem;
+    width: 18rem;
     background: transparent;
     border: transparent ;
     font-size: 3rem;
@@ -74,6 +74,7 @@ ul {
     font-family: Roboto;
     color: rgb(53, 53, 53);
     border-bottom: solid .3rem black;
+    box-sizing: border-box;
 }
 
 .home-btn:hover {
@@ -83,3 +84,17 @@ ul {
 .submit-btn{
     width: 4.3rem;
 }
+
+.projects-list {
+    display: flex;
+    width: 11vw;
+    border: solid 2px rgba(255, 217, 0, 0.692);
+    padding: .5rem;
+    border-radius: 1.75rem;
+    height: 1.7rem;
+}
+/* 
+.home-form-class {
+    display: flex;
+    gap: 4rem;
+} */
