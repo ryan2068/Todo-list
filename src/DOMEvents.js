@@ -6,6 +6,7 @@ const formListContainer = document.createElement("div")
 formListContainer.classList.add("form-list-container")
 
 
+
 const addTaskInputsToDom = () => {
 
     //Title input
@@ -37,8 +38,11 @@ const addTaskInputsToDom = () => {
     contentDiv.appendChild(formListContainer)  
 }
 
+
 const addATask = (title, description, dueDate, priority) => {
     const submitBtn = document.querySelector(".submit")
+    const tasksArray = []
+    let count = 0
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
         const title = document.querySelector("#title").value
@@ -47,6 +51,8 @@ const addATask = (title, description, dueDate, priority) => {
         const priority = document.querySelector("#priority")
         const task = new createTask (title, description, dueDate, priority)
         console.log(task)
+        
+        tasksArray.push(task)
 
         const ul = document.createElement("ul");
         const li = document.createElement("li");
@@ -65,9 +71,9 @@ const addATask = (title, description, dueDate, priority) => {
         taskPriority.setAttribute("type", "checkbox")
         taskPriority.classList.add("important-checkbox")
         //setting list inputs as a ToDo list
-        taskTitle.textContent = task.title
-        taskDescription.textContent = task.description
-        taskDueDate.textContent = task.dueDate
+        taskTitle.textContent = tasksArray[count].title
+        taskDescription.textContent = tasksArray[count].description
+        taskDueDate.textContent = tasksArray[count].dueDate
         taskPriority.textContent = task.priority
 
         listLeft.classList.add("list-left")
@@ -81,14 +87,25 @@ const addATask = (title, description, dueDate, priority) => {
         li.appendChild(listLeft)
         li.appendChild(DueDatePriorityContainer)
 
-
-        
-
-
-
         ul.appendChild(li)
         formListContainer.appendChild(ul)
         contentDiv.appendChild(formListContainer)
+
+        //local storage functions
+        for (let i = 0; i < tasksArray.length; i++) {
+            localStorage.setItem(`task${i}`, JSON.stringify(tasksArray[count]))
+        }
+        // for (let i = 0; i < tasksArray.length; i++) {
+
+        // }
+        
+
+
+        console.log(tasksArray)
+
+        count++
+
+
     })
     
 }
