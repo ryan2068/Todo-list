@@ -38,10 +38,11 @@ const addTaskInputsToDom = () => {
     contentDiv.appendChild(formListContainer)  
 }
 
+const tasksArray = []
+
 
 const addATask = (title, description, dueDate, priority) => {
     const submitBtn = document.querySelector(".submit")
-    const tasksArray = []
     let count = 0
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
@@ -50,9 +51,8 @@ const addATask = (title, description, dueDate, priority) => {
         const dueDate = document.querySelector("#dueDate").value
         const priority = document.querySelector("#priority")
         const task = new createTask (title, description, dueDate, priority)
-        console.log(task)
         
-        tasksArray.push(task)
+        
 
         const ul = document.createElement("ul");
         const li = document.createElement("li");
@@ -71,9 +71,9 @@ const addATask = (title, description, dueDate, priority) => {
         taskPriority.setAttribute("type", "checkbox")
         taskPriority.classList.add("important-checkbox")
         //setting list inputs as a ToDo list
-        taskTitle.textContent = tasksArray[count].title
-        taskDescription.textContent = tasksArray[count].description
-        taskDueDate.textContent = tasksArray[count].dueDate
+        taskTitle.textContent = task.title
+        taskDescription.textContent = task.description
+        taskDueDate.textContent = task.dueDate
         taskPriority.textContent = task.priority
 
         listLeft.classList.add("list-left")
@@ -91,19 +91,14 @@ const addATask = (title, description, dueDate, priority) => {
         formListContainer.appendChild(ul)
         contentDiv.appendChild(formListContainer)
 
-        //local storage functions
-        for (let i = 0; i < tasksArray.length; i++) {
-            localStorage.setItem(`task${i}`, JSON.stringify(tasksArray[count]))
-        }
-        // for (let i = 0; i < tasksArray.length; i++) {
-
-        // }
         
+        //local-storage
+        tasksArray.push(task)
+        localStorage.setItem("task", JSON.stringify(tasksArray))
 
 
-        console.log(tasksArray)
 
-        count++
+        
 
 
     })
@@ -119,4 +114,4 @@ const addATask = (title, description, dueDate, priority) => {
 
 
 
-export {addTaskInputsToDom, addATask}
+export {addTaskInputsToDom, addATask, tasksArray}

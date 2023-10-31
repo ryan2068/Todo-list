@@ -1,8 +1,9 @@
-// let todoStorage = document.querySelectorAll("")
+import { tasksArray } from "./DOMEvents"
 
 const saveTaskToLocalStorage = () => {
-    const doneTodo = document.querySelectorAll(".todo-list")
-    console.log(doneTodo)
+    console.log("hello from local-storage module")
+    
+
 
 }
 
