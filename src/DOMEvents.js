@@ -5,8 +5,6 @@ const form = document.createElement("form")
 const formListContainer = document.createElement("div")
 formListContainer.classList.add("form-list-container")
 
-
-
 const addTaskInputsToDom = () => {
 
     //Title input
@@ -27,8 +25,6 @@ const addTaskInputsToDom = () => {
     submitBtn.classList.add("submit")
     submitBtn.setAttribute("type", "submit")
     submitBtn.textContent = "Submit"
-
-
     
     form.appendChild(titleInput)
     form.appendChild(descriptionInput)
@@ -50,9 +46,7 @@ const addATask = (title, description, dueDate, priority) => {
         const description = document.querySelector("#description").value
         const dueDate = document.querySelector("#dueDate").value
         const priority = document.querySelector("#priority")
-        const task = new createTask (title, description, dueDate, priority)
-        
-        
+        const task = new createTask (title, description, dueDate, priority)  
 
         const ul = document.createElement("ul");
         const li = document.createElement("li");
@@ -91,27 +85,15 @@ const addATask = (title, description, dueDate, priority) => {
         formListContainer.appendChild(ul)
         contentDiv.appendChild(formListContainer)
 
-        
-        //local-storage
+        //add task to local-storage 
         tasksArray.push(task)
-        localStorage.setItem("task", JSON.stringify(tasksArray))
-
-
-
+        localStorage.setItem("task", JSON.stringify(tasksArray))  
         
-
-
+        const storedTasks = JSON.parse(localStorage.getItem("task"))
+        console.log(storedTasks)
     })
     
 }
-
-
-
-
-
-
-
-
 
 
 export {addTaskInputsToDom, addATask, tasksArray}
