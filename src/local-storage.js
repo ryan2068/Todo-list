@@ -27,6 +27,7 @@ const getLocalStorageTasks = () => {
         listLeft.appendChild(taskTitle)
         listLeft.appendChild(taskDescription)
         li.appendChild(listLeft)
+        console.log(ul)
 
         ul.appendChild(li)
         formListContainer.appendChild(ul)

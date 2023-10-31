@@ -90,7 +90,6 @@ const addATask = (title, description, dueDate, priority) => {
         localStorage.setItem("task", JSON.stringify(tasksArray))  
         
         const storedTasks = JSON.parse(localStorage.getItem("task"))
-        console.log(storedTasks)
     })
     
 }
