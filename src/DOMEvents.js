@@ -34,7 +34,7 @@ const addTaskInputsToDom = () => {
     contentDiv.appendChild(formListContainer)  
 }
 
-const tasksArray = []
+const tasksArray = JSON.parse(localStorage.getItem('task')) || []
 
 
 const addATask = (title, description, dueDate, priority) => {
@@ -89,7 +89,6 @@ const addATask = (title, description, dueDate, priority) => {
         tasksArray.push(task)
         localStorage.setItem("task", JSON.stringify(tasksArray))  
         
-        const storedTasks = JSON.parse(localStorage.getItem("task"))
     })
     
 }

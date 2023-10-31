@@ -1,12 +1,12 @@
 import { createTask } from "./create-task"
 
-const contentDiv = document.querySelector("#content")
-const formListContainer = document.querySelector(".form-list-container")
-
 const getLocalStorageTasks = () => {
     
     const storedTasks = JSON.parse(localStorage.getItem("task"))
     for (let i = 0; i < storedTasks.length; i++) {
+        const contentDiv = document.querySelector("#content")
+        const formListContainer = document.querySelector(".form-list-container")
+        
         const oldTask = new createTask(storedTasks[i].title, storedTasks[i].description, storedTasks[i].dueDate)
         
         //creating divs to append task to.
@@ -27,7 +27,6 @@ const getLocalStorageTasks = () => {
         listLeft.appendChild(taskTitle)
         listLeft.appendChild(taskDescription)
         li.appendChild(listLeft)
-        console.log(ul)
 
         ul.appendChild(li)
         formListContainer.appendChild(ul)
